@@ -4,18 +4,12 @@ FROM node:16.14-alpine
 WORKDIR /app-backend
 # Copiar os package.json, package-lock.json e packages.npm para o container
 COPY package*.json .
-COPY packages.npm .
 # Instalar as dependências Node
 RUN npm install
 
 # Copiar o restante dos arquivos da aplicação para o container
 
-COPY src src
-COPY .eslintignore .
-COPY .eslintrc.json .
-COPY .sequelizerc .
-COPY nyc.config.js .
-COPY tsconfig.json .
+COPY . .
 
 # Sinalize que aplicação expõe a porta 3001
 
