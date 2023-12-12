@@ -1,5 +1,6 @@
 import * as jwt from 'jsonwebtoken';
 import * as bcrypt from 'bcryptjs';
+import * as EmailValidator from 'email-validator';
 import { ServiceResponse } from '../Interfaces/ServiceResponse';
 import { IUser } from '../Interfaces/users/IUser';
 import UserModel from '../database/models/UserModel';
@@ -10,13 +11,6 @@ type Data = {
   message?: string;
   token?: string;
 };
-
-const validateEmail = (email: string) => String(email)
-  .toLowerCase()
-  .match(
-    // eslint-disable-next-line max-len
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-  );
 
 export default class UserService {
   constructor(private userModel = UserModel) { }
@@ -31,7 +25,7 @@ export default class UserService {
     });
 
     if (!user
-      || !validateEmail(body.email)
+      || !EmailValidator.validate(body.email)
       || body.password.length < 6
       || !(await bcrypt.compare(body.password, user.dataValues.password))) {
       return { status: 401, data: { message: 'Invalid email or password' } };
