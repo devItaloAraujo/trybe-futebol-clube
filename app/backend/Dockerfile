@@ -16,7 +16,6 @@ COPY .eslintrc.json .
 COPY .sequelizerc .
 COPY nyc.config.js .
 COPY tsconfig.json .
-COPY . .
 
 # Sinalize que aplicação expõe a porta 3001
 
