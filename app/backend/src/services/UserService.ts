@@ -31,9 +31,9 @@ export default class UserService {
       return { status: 401, data: { message: 'Invalid email or password' } };
     }
 
-    const { id } = user.dataValues;
+    const { id, role } = user.dataValues;
 
-    const token = jwt.sign({ id }, SECRET_KEY);
+    const token = jwt.sign({ id, role }, SECRET_KEY);
 
     return { status: 200, data: { token } };
   }
