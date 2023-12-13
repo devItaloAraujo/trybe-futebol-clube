@@ -2,9 +2,13 @@ import * as jwt from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 import { IUser } from '../Interfaces/users/IUser';
 
+export interface roleRequest extends Request {
+  role?: string;
+}
+
 const SECRET_KEY = process.env.JWT_SECRET || 'suaSenhaSecreta';
 
-function validateToken(req: Request, res: Response, next: NextFunction) {
+function validateToken(req: roleRequest, res: Response, next: NextFunction) {
   const token = req.headers.authorization?.split(' ');
   if (!token) {
     return res.status(401).json({ message: 'Token not found' });
@@ -18,9 +22,9 @@ function validateToken(req: Request, res: Response, next: NextFunction) {
     }
     if (decoded) {
       const user = decoded as IUser;
-      return res.status(200).json({ role: user.role });
+      req.role = user.role;
+      next();
     }
-    next();
   });
 }
 
