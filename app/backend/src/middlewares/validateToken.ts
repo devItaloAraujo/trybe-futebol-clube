@@ -1,10 +1,7 @@
 import * as jwt from 'jsonwebtoken';
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
 import { IUser } from '../Interfaces/users/IUser';
-
-export interface roleRequest extends Request {
-  role?: string;
-}
+import { roleRequest } from '../Interfaces/RoleRequest';
 
 const SECRET_KEY = process.env.JWT_SECRET || 'suaSenhaSecreta';
 

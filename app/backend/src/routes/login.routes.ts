@@ -1,6 +1,7 @@
 import { Request, Router, Response } from 'express';
 import LoginController from '../controllers/LoginController';
-import validateToken, { roleRequest } from '../middlewares/validateToken';
+import validateToken from '../middlewares/validateToken';
+import { roleRequest } from '../Interfaces/RoleRequest';
 
 const loginController = new LoginController();
 
