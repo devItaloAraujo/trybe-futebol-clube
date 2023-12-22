@@ -16,7 +16,7 @@ O projeto utiliza o docker-compose para orquestrar os 3 contâiners necessários
 ## Iniciando o projeto localmente:
 - Tenha instalado o Node versão igual ou superior à 16.14.0 LTS.
 - Tenha instalado o Docker Compose na versão 2.5 ou superior.
-- Clone esse repositório em uma pasta com: git clone git@github.com:devItaloAraujo/trybe-futebol-clube.git
+- Clone esse repositório em uma pasta com: **git clone git@github.com:devItaloAraujo/trybe-futebol-clube.git**
 - Instale as dependencias do projeto com o comando: **npm run install:apps**
 - Rode o docker compose, execute o comando: **npm run compose:up**
 - Experimente os testes locais com o comando:  **npm run test**
