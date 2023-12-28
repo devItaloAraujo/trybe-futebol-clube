@@ -1,6 +1,6 @@
-# Boas vindas ao repositório do Trybe Futebol Clube!
+# Tabela de Classificação: Trybe Futebol Clube!
 
-Esse projeto tem como objetivo fortalecer e demonstrar as habilidades de construção de um CRUD com autenticação de usuário que alimenta uma aplicação Front-End bem como seus testes, utilizando bibliotecas Node como o Sequelize, Express, MySQL2, mocha, jest, jsonwebtoken e bcryptjs. 
+Esse projeto trata-se de um CRUD com autenticação de usuário que alimenta uma aplicação Front-End e seus testes, utilizando bibliotecas Node como o Sequelize, Express, MySQL2, mocha, jest, jsonwebtoken e bcryptjs. 
 
 O Back-End foi desenvolvido por mim com endpoints que fazem a autenticação do usuário com base nos dados do banco e fornecem informações sobre as partidas, times e sua classificação. 
 É possível criar novas partidas, ver as informações de partidas e classificação e atualizar os dados de uma partida.
