@@ -6,7 +6,7 @@ O Back-End foi desenvolvido por mim com endpoints que fazem a autenticação do 
 É possível criar novas partidas, ver as informações de partidas e classificação e atualizar os dados de uma partida.
 A encriptação das senhas no banco de dados é feita utilizando o bcryptjs e o banco já é populado automaticamente pela configuração que desenvolvi do sequelize e dos dockerfile.
 
-Todas as informações exibidas são trabalhadas e fornecidas pelo back-end, o front-end foi desenvolvido e fornecido pela Trybe e serve apenas para demonstração visual dos dados recebidos.
+Todas as informações exibidas são trabalhadas e fornecidas pelo back-end, o front-end foi desenvolvido e fornecido pela Trybe (escola de desenvolvimento web) e serve apenas para demonstração visual dos dados recebidos.
 
 O projeto utiliza o docker-compose para orquestrar os 3 contâiners necessários: 
 - back-end (disponivel em `http://localhost:3001` )
